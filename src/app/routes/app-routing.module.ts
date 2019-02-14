@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ConsultComponent } from './consult/consult.component';
 import { LegalesComponent } from './legales/legales.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),CommonModule],
   exports: [RouterModule],
   declarations: [HomeComponent, ContactComponent, ConsultComponent, LegalesComponent, NotFoundComponent]
 })
