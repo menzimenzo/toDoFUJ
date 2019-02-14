@@ -4,15 +4,11 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ConsultComponent } from './consult/consult.component';
 
-const routes: Routes = [{
-  path: '',component : HomeComponent
-},
-{
-  path: 'contact',component : ContactComponent
-},
-{
-  path: 'consult',component : ConsultComponent
-}];
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'consult', component: ConsultComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
