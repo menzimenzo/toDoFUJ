@@ -2,23 +2,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 127, 80, 0.685);
+    background-color: rgb(80, 106, 255);
     .logo{
         display: flex;
         align-items: center;
+        cursor: pointer;
         img {
             width:3rem;
             padding: 0.5rem;
         }
         span{
             font-size: 2rem;
-            color: black;
+            color: white;
             font-family : Arial, Helvetica, sans-serif, times, serif;
         }
     }
     nav {
         a {
-            color: black;
+            color: white;
             text-decoration: none;
             font-family : Arial, Helvetica, sans-serif, times, serif;
             padding: 0.5rem;
