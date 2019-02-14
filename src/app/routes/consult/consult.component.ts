@@ -32,8 +32,16 @@ export class ConsultComponent implements OnInit {
   }
 
   onSubmit() {
-    this.todolist.push(this.f.value);
-    this.f.reset();
+    // si on met la ligne du dessous, a chaque clic sur le bouton submit on met le meme objet en mémoire
+    // this.todolist.push(this.f.value);
+
+    // du coup, on pousse un clone : on passe un nouvel objet qui contient les valeurs voulues
+    //this.todolist.push({prio:this.f.value.prio, desc:this.f.value.desc});
+
+    // en version abbrégée, ca donne ca :
+    this.todolist.push({...this.f.value});
+
+    // this.f.reset();
   }
 
   isSelected(r: ToDoRecord) {
@@ -50,5 +58,23 @@ export class ConsultComponent implements OnInit {
 
   hasSelectedRecord() {
     return this.selectedRecords.size > 0;
+  }
+
+  hasSelectedOnlyOneRecord() {
+    if (this.selectedRecords.size < 2 && this.selectedRecords.size > 0 ) {
+      return true ;
+    }
+  }
+  removeSelection() {
+    console.log('suppression en cours');
+    this.selectedRecords.forEach(r => {
+      const index = this.todolist.findIndex(x=> x === r);
+      this.todolist.splice(index, 1);
+    });
+    this.selectedRecords.clear();
+  }
+
+  updateSelection() {
+    console.log('test');
   }
 }
