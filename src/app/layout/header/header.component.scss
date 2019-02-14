@@ -1,28 +1,36 @@
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: rgb(80, 106, 255);
-    .logo{
+    height: 4rem;
+    .margin-auto {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 90rem;
+    }
+    .logo {
         display: flex;
         align-items: center;
         cursor: pointer;
         img {
-            width:3rem;
-            padding: 0.5rem;
+            width: 3rem;
         }
-        span{
+        span {
             font-size: 2rem;
             color: white;
-            font-family : Arial, Helvetica, sans-serif, times, serif;
+            font-family: Arial, Helvetica, sans-serif, times, serif;
+            padding: 1rem;
         }
     }
     nav {
         a {
             color: white;
             text-decoration: none;
-            font-family : Arial, Helvetica, sans-serif, times, serif;
-            padding: 0.5rem;
+            font-family: Arial, Helvetica, sans-serif, times, serif;
+            padding: 1rem;
         }
     }
 }
