@@ -14,6 +14,8 @@ interface ToDoRecord {
 export class ConsultComponent implements OnInit {
   todolist: ToDoRecord[];
 
+  selectedRecords: Set<ToDoRecord> = new Set<ToDoRecord>();
+
   f = new FormGroup({
     desc: new FormControl('', [Validators.required]),
     prio: new FormControl('0')
@@ -31,5 +33,22 @@ export class ConsultComponent implements OnInit {
 
   onSubmit() {
     this.todolist.push(this.f.value);
+    this.f.reset();
+  }
+
+  isSelected(r: ToDoRecord) {
+    return this.selectedRecords.has(r);
+  }
+
+  toggleSelection(r: ToDoRecord) {
+    if (this.isSelected(r)) {
+      this.selectedRecords.delete(r);
+      return;
+    }
+    this.selectedRecords.add(r);
+  }
+
+  hasSelectedRecord() {
+    return this.selectedRecords.size > 0;
   }
 }

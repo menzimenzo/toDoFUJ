@@ -1,6 +1,6 @@
 <form [formGroup]="f" (ngSubmit)="onSubmit()">
   <div>
-    <textarea cols="30" rows="4" formControlName="desc" ></textarea>
+    <textarea cols="30" rows="4" formControlName="desc"></textarea>
   </div>
   <div>
     <label>Priorité : </label>
@@ -13,12 +13,15 @@
 </form>
 <BR>
 <BR>
+<button [disabled]="!hasSelectedRecord()" >Remove</button>
+<BR>
+<BR>
 <div class="table">
   <div class="row header">
     <div class="col col-1">Description</div>
     <div class="col col-2">Priorité</div>
   </div>
-  <div *ngFor="let r of todolist"  class="row">
+  <div (click)="toggleSelection(r)" *ngFor="let r of todolist" class="row" [class.selected]="isSelected(r)" >
     <div class="col col-1">{{r.desc}}</div>
     <div class="col col-2">{{r.prio}}</div>
   </div>

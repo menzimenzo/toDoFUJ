@@ -26,9 +26,17 @@
             background-color: rgb(80, 106, 255);
             text-align: center;
         }
+        &.selected{
+            background-color: aquamarine;
+        }
     }
 }
 
 form{
     padding-top: 2rem;
+}
+
+.command{
+    padding: 2rem 0;
+    height: 5rem;
 }
