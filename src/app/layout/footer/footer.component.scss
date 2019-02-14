@@ -1,0 +1,13 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 127, 80, 0.685);
+    height: 3rem;
+    a {
+        color: black;
+        text-decoration: none;
+        padding: 1rem;
+        font-family: Arial, Helvetica, sans-serif, times, serif
+    }
+}
